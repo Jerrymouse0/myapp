@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>
+        <%= title %>
+    </title>
+    <style>
+    a {
+        text-decoration: none;
+    }
+
+    a:link,
+    a:visited,
+    a:hover,
+    a:active {
+        color: black;
+    }
+    </style>
+</head>
+
+<body>
+    <form action="/users/search" method="post">
+        姓名：
+        <input type="text" name="s_name" value="<%= datas.name %>">
+        <br> 年龄：
+        <input type="text" name="s_age" value="<%= datas.age %>">
+        <br> 性别：
+        <input type="text" name="s_sex" value="<%= datas.sex %>">
+        <br>
+        <input type="submit" value="查询">
+    </form>
+    <br>
+    <button>
+        <a href="/users/add">添加用户</a>
+    </button>
+    <br>
+    <table>
+        <tr align="center">
+            <th>编号</th>
+            <th>姓名</th>
+            <th>年龄</th>
+            <th>密码</th>
+            <th>性别</th>
+            <th>操作</th>
+        </tr>
+        <% for(var i = 0; i < datas.length; i++) {%>
+            <tr align="center">
+                <td>
+                    <%= datas[i].id %>
+                </td>
+                <td>
+                    <%= datas[i].name %>
+                </td>
+                <td>
+                    <%= datas[i].age %>
+                </td>
+                <td>
+                    <%= datas[i].password %>
+                </td>
+                <td>
+                    <%= datas[i].sex %>
+                </td>
+                <td colspan="2">
+                    <button><a href="/users/toUpdate/<%= datas[i].id %>">修改</a>
+                    </button>
+                    <button><a href="/users/del/<%= datas[i].id %>">删除</a></button>
+                </td>
+            </tr>
+            <% } %>
+    </table>
+</body>
+
+</html>
