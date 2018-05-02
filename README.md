@@ -11,3 +11,11 @@
 ![infoID](https://github.com/Jerrymouse0/myapp/blob/master/public/images/4.png)
 ![infoPassword](https://github.com/Jerrymouse0/myapp/blob/master/public/images/5.png)
 ![infoSex](https://github.com/Jerrymouse0/myapp/blob/master/public/images/6.png)
+
+- 4.进入项目文件夹，用cmd命令运行：```npm start```，用浏览器打开 http://localhost:3000/users 
+- 5.数据库配置的更改请看[db.js文件](https://github.com/Jerrymouse0/myapp/blob/master/config/db.js)
+  <br>其中，host为主机名，如果在本地跑，就用localhost</br>
+  <br>user为MySQL用户名，password为MySQL密码，database为项目所用的数据库名</br>
+
+  
+
